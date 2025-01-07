@@ -1,0 +1,10 @@
+.word-container {
+    border: 1px solid #b3afeb;
+    border-radius: 5px; 
+    text-align: right;
+    padding: 5px;
+    background-color: #b3afeb;
+    margin-bottom: 5px;
+    font-size: 12px;
+  
+}

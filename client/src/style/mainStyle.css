@@ -1,0 +1,7 @@
+body {
+    background-color: #e6e5f3;
+    /*font-family: var(--fonts-primary);*/
+    font-size: 14px;
+    margin: 0;
+    height: 100vh; /*nsures the element stretches from the top to the bottom of the screen*/
+}
