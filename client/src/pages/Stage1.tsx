@@ -16,20 +16,23 @@ const WORDS_LIST: WordItem[] = [
 
 function Stage1() {
   const [board, setBoard] = useState<WordItem[]>([]);
+  const [wordBank, setWordBank] = useState<WordItem[]>(WORDS_LIST);
 
   const [{ isOver }, drop] = useDrop<{ id: number; value: string }, void, { isOver: boolean }>
-  ({
-    accept: 'WORD',
-    drop: (item) => addWordToBoard(item),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  });
+    ({
+      accept: 'WORD',
+      drop: (item) => addWordToBoard(item),
+      collect: (monitor) => ({
+        isOver: !!monitor.isOver(),
+      }),
+    });
 
   const addWordToBoard = (item: { id: number; value: string }) => {
     if (!board.some((word) => word.id === item.id)) {
       setBoard((prevBoard) => [...prevBoard, item]);
     }
+
+    setWordBank((prevBank) => prevBank.filter((word) => word.id !== item.id));
   };
 
   return (
@@ -58,7 +61,7 @@ function Stage1() {
 
       <div className="Words-bank-container">
         <p>בנק מילים</p>
-        {WORDS_LIST.map((word) => (
+        {wordBank.map((word) => (
           <Word key={word.id} word={word} />
         ))}
       </div>
