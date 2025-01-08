@@ -3,14 +3,15 @@ body {
     /*font-family: var(--fonts-primary);*/
     font-size: 14px;
     margin: 0;
-    height: 100vh; /*ensures the element stretches from the top to the bottom of the screen*/
-    text-align: center;
+    height: 100vh; 
+    justify-content: center;
 }
 
 .payslip-container {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
+    
 }
 
 .word-container {

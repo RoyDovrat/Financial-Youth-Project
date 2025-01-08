@@ -8,7 +8,7 @@ type WordItem = {
   value: string;
 };
 
-const WORDS_LIST: WordItem[] = [
+const INITIAL_WORDS_LIST: WordItem[] = [
   { id: 1, value: 'תאריך' },
   { id: 2, value: 'לכבוד' },
   { id: 3, value: 'ותק' },
@@ -16,22 +16,27 @@ const WORDS_LIST: WordItem[] = [
 
 function Stage1() {
   const [board, setBoard] = useState<WordItem[]>([]);
-  const [wordBank, setWordBank] = useState<WordItem[]>(WORDS_LIST);
+  const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
 
-  const [{ isOver }, drop] = useDrop<{ id: number; value: string }, void, { isOver: boolean }>
-    ({
-      accept: 'WORD',
-      drop: (item) => addWordToBoard(item),
-      collect: (monitor) => ({
-        isOver: !!monitor.isOver(),
-      }),
-    });
+  const [{ isOver }, drop] = useDrop<
+    { id: number; value: string },
+    void,
+    { isOver: boolean }
+  >({
+    accept: 'WORD',
+    drop: (item) => handleDrop(item),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  });
 
-  const addWordToBoard = (item: { id: number; value: string }) => {
+  const handleDrop = (item: { id: number; value: string }) => {
+    // Add the word to the board if it doesn't already exist there
     if (!board.some((word) => word.id === item.id)) {
       setBoard((prevBoard) => [...prevBoard, item]);
     }
 
+    // Remove the word from the word bank
     setWordBank((prevBank) => prevBank.filter((word) => word.id !== item.id));
   };
 
@@ -43,7 +48,7 @@ function Stage1() {
 
       <div className="payslip-container">
         <div
-          ref={drop} // Attach the drop reference
+          ref={drop}
           className="payslip-board"
           style={{
             border: isOver ? '2px dashed green' : '2px solid black',
@@ -52,7 +57,7 @@ function Stage1() {
           }}
         >
           {board.map((word) => (
-            <div key={word.id} className="dropped-word">
+            <div key={word.id} className="word-container">
               {word.value}
             </div>
           ))}
