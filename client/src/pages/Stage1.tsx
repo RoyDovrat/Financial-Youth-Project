@@ -15,52 +15,75 @@ const INITIAL_WORDS_LIST: WordItem[] = [
 ];
 
 function Stage1() {
-  const [board, setBoard] = useState<WordItem[]>([]);
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
+  const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null]);
 
-  const [{ isOver }, drop] = useDrop<
-    { id: number; value: string },
-    void,
-    { isOver: boolean }
-  >({
-    accept: 'WORD',
-    drop: (item) => handleDrop(item),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  });
+  // function to create a drop area for each slot
+  const createDrop = (index: number) =>
+    useDrop<
+      { id: number; value: string },
+      void,
+      { isOver: boolean }
+    >({
+      accept: 'WORD',
+      drop: (item) => handleDrop(item, index),
+      collect: (monitor) => ({
+        isOver: !!monitor.isOver(),
+      }),
+    });
 
-  const handleDrop = (item: { id: number; value: string }) => {
-    // Add the word to the board if it doesn't already exist there
-    if (!board.some((word) => word.id === item.id)) {
-      setBoard((prevBoard) => [...prevBoard, item]);
+
+  const handleDrop = (item: { id: number; value: string }, index: number) => {
+    if (item.id - 1 === index && !slots[index]) {
+      const newSlots = [...slots];
+      newSlots[index] = item;
+      setSlots(newSlots);
+
+      setWordBank((prevBank) =>
+        prevBank.filter((word) => word.id !== item.id)
+      );
+    } else {
+      alert('This word does not belong here!');
     }
-
-    // Remove the word from the word bank
-    setWordBank((prevBank) => prevBank.filter((word) => word.id !== item.id));
   };
 
   return (
     <div>
-      <h1>להשלים את התלוש</h1>
-      <p>בחרו מילה מתוך בנק המילים</p>
-      <p>והתאימו אותם למיקום הנכון בתלוש השכר</p>
+      <div className='instructions'>
+        <h1>להשלים את התלוש</h1>
+        <p>בחרו מילה מתוך בנק המילים</p>
+        <p>והתאימו אותם למיקום הנכון בתלוש השכר</p>
+      </div>
 
       <div className="payslip-container">
-        <div
-          ref={drop}
-          className="payslip-board"
-          style={{
-            border: isOver ? '2px dashed green' : '2px solid black',
-            minHeight: '100px',
-            padding: '10px',
-          }}
-        >
-          {board.map((word) => (
-            <div key={word.id} className="word-container">
-              {word.value}
-            </div>
-          ))}
+        <div className="payslip-board">
+          {slots.map((slot, index) => {
+            const [{ isOver }, dropRef] = createDrop(index);
+
+            return (
+              <div
+                key={index}
+                ref={dropRef}
+                className="payslip-slot"
+                style={{
+                  border: isOver ? '2px dashed green' : '1px solid gray',
+                  minHeight: '50px',
+                  minWidth: '100px',
+                  margin: '5px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: slot ? '#b3afeb' : '#f9f9f9',
+                }}
+              >
+                {slot ? (
+                  <div className="word-container">{slot.value}</div>
+                ) : (
+                  'Drop Here'
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 
