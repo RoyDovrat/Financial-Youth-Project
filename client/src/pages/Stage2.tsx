@@ -64,13 +64,13 @@ function Stage2() {
         <p>והתאימו אותם למיקום הנכון בתלוש השכר</p>
       </div>
 
-      {/* Progress Bar with Label */}
-    {/*  <Box sx={{ width: '100%', margin: '30px 0' }}>
+      {/* progress Bar */}
+      <Box sx={{ width: '100%', margin: '30px 0' }}>
         <Typography variant="body2" component="div" align="left" gutterBottom>
           {STAGE_NUMBER} / {TOTAL_STAGES}
         </Typography>
         <LinearProgress variant="determinate" value={PROGRESS} />
-      </Box>*/}
+      </Box>
 
       <div className="payslip-container">
         <div className="payslip-board">
