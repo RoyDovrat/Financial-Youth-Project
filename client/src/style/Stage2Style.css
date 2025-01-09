@@ -13,7 +13,7 @@ body {
     border-radius: 5px;
 
 }
-/*
+
 .payslip-board {
     position: relative;
     width: 100%;
@@ -21,14 +21,15 @@ body {
     height: 300px;
     margin: auto;
 }
-*/
+
 .slot-0 {
     position: absolute;
     border-radius: 5px;
-    width: 160px;
+    width: 250px;
     height: 30px;
-    top: 30px;
-    right: -114px;
+    top: 10px;
+    right: 10px;
+    /* Top-right corner */
 }
 
 .slot-1 {
@@ -85,7 +86,6 @@ body {
     width: 70px;
 }
 
-
 .payslip-slot {
     border: 1px solid gray;
     /*min-height: 50px;
@@ -96,7 +96,6 @@ body {
     transition: background-color 0.3s ease, border 0.3s ease;
 }
 
-
 .payslip-slot:hover {
     border: 2px dashed blue;
 }
@@ -106,70 +105,13 @@ body {
     flex-wrap: wrap;
     margin-bottom: 20px;
     max-width: 398px;
-    flex-direction: row-reverse;
 }
 
-.Words-bank-container {
+.Words-bank-container{
     align-items: right;
 
 }
 
-/*
-.employee-details-image{
-    max-width: 298px;
-    border: 2px solid blue;
-    filter: blur(1px);
-}
 
-.payments-image{
-    max-width: 298px;
-  
-}
-    */
 
-.payslip-board {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    /* Update height to auto to allow flexible layout */
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    /* Stack child elements vertically */
-    align-items: center;
-    /* Align items to the start (left) */
-}
 
-.employee-details-image {
-    max-width: 100%;
-    border: 2px solid blue;
-    filter: blur(1px);
-    margin-bottom: 10px;
-    
-}
-
-.payments-image {
-    max-width: 70%;
-    margin-left: 30%;
-    margin-top: -9px;
-    border: 2px solid darkgoldenrod;
-    filter: blur(1px);
-}
-
-.mandatoryDeductions-image{
-    max-width: 25%;
-    margin-top: -180px;
-    border: 2px solid green;
-    margin-right: 301px;
-    filter: blur(1px);
-}
-
-.additionalData-image{
-    max-width: 25%;
-    margin-top: -180px;
-    border: 2px solid purple;
-    margin-right: 301px;
-    filter: blur(1px);
-
-}

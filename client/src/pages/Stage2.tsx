@@ -5,13 +5,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import '../style/stage1Style.css';
 import Word from '../components/Word';
-import employeeAndEmployerDetails from '../images/EmployeeAndEmployerDetails.png';
-import payments from '../images/payments.png';
-import mandatoryDeductions from '../images/mandatory deductions.png';
-import additionalData from '../images/additional data.png';
 
-
-const STAGE_NUMBER = 1
+const STAGE_NUMBER = 2
 const TOTAL_STAGES = 3
 const PROGRESS = (STAGE_NUMBER / TOTAL_STAGES) * 100;
 
@@ -21,7 +16,7 @@ type WordItem = {
 };
 
 const INITIAL_WORDS_LIST: WordItem[] = [
-  { id: 1, value: 'פרטי עובד ומעביד' },
+  { id: 1, value: 'פרטי החברה' },
   { id: 2, value: 'תאריך' },
   { id: 3, value: 'לכבוד' },
   { id: 4, value: 'שם מלא עובד' },
@@ -30,9 +25,9 @@ const INITIAL_WORDS_LIST: WordItem[] = [
   { id: 7, value: 'ת"ז עובד' },
 ];
 
-function Stage1() {
+function Stage2() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
-  const [slots, setSlots] = useState<(WordItem | null)[]>([null]);
+  const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null, null, null, null, null]);
 
   const createDrop = (index: number) =>
     useDrop<
@@ -69,7 +64,7 @@ function Stage1() {
         <p>והתאימו אותם למיקום הנכון בתלוש השכר</p>
       </div>
 
-      {/* progress bar */}
+      {/* Progress Bar with Label */}
       <Box sx={{ width: '100%', margin: '30px 0' }}>
         <Typography variant="body2" component="div" align="left" gutterBottom>
           {STAGE_NUMBER} / {TOTAL_STAGES}
@@ -79,12 +74,6 @@ function Stage1() {
 
       <div className="payslip-container">
         <div className="payslip-board">
-
-          <img src={employeeAndEmployerDetails} alt="Employee and Employer Details" className="employee-details-image" />
-          <img src={payments} alt="payments" className="payments-image" />
-          <img src={mandatoryDeductions} alt="mandatoryDeductions" className="mandatoryDeductions-image" />
-       
-
           {slots.map((slot, index) => {
             const [{ isOver }, dropRef] = createDrop(index);
 
@@ -122,4 +111,4 @@ function Stage1() {
   );
 }
 
-export default Stage1;
+export default Stage2;
