@@ -17,8 +17,8 @@ const INITIAL_WORDS_LIST: WordItem[] = [
 function Stage1() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
   const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null]);
+  const [employeeBasicDetails, setEmployeeBasicDetails] = useState<(WordItem | null)[]>([null, null]); 
 
-  // function to create a drop area for each slot
   const createDrop = (index: number) =>
     useDrop<
       { id: number; value: string },
@@ -31,7 +31,6 @@ function Stage1() {
         isOver: !!monitor.isOver(),
       }),
     });
-
 
   const handleDrop = (item: { id: number; value: string }, index: number) => {
     if (item.id - 1 === index && !slots[index]) {
@@ -48,7 +47,7 @@ function Stage1() {
   };
 
   return (
-    <div>
+    <div className='page-stage1'>
       <div className='instructions'>
         <h1>להשלים את התלוש</h1>
         <p>בחרו מילה מתוך בנק המילים</p>
@@ -64,17 +63,8 @@ function Stage1() {
               <div
                 key={index}
                 ref={dropRef}
-                className="payslip-slot"
-                style={{
-                  border: isOver ? '2px dashed green' : '1px solid gray',
-                  minHeight: '50px',
-                  minWidth: '100px',
-                  margin: '5px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backgroundColor: slot ? '#b3afeb' : '#f9f9f9',
-                }}
+                className={`payslip-slot slot-${index}`}
+               
               >
                 {slot ? (
                   <div className="word-container">{slot.value}</div>
@@ -84,6 +74,8 @@ function Stage1() {
               </div>
             );
           })}
+
+          
         </div>
       </div>
 

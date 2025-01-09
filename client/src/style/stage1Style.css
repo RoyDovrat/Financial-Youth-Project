@@ -3,7 +3,6 @@ body {
     /*font-family: var(--fonts-primary);*/
     font-size: 14px;
     margin: 0;
-    height: 100vh; 
     justify-content: center;
     text-align: right;
 }
@@ -12,16 +11,83 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
-    
+
 }
+
+/* Payslip board styles */
+.payslip-board {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: auto;
+}
+
+.slot-0 {
+    position: absolute;
+    border-radius: 5px;
+    width: 250px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    /* Top-right corner */
+}
+
+.slot-1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+    /* Top-left corner */
+}
+
+.slot-2 {
+    position: absolute;
+    top: 85px;
+    right: 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+}
+
+/* Slot base styles */
+.payslip-slot {
+    border: 1px solid gray;
+    /*min-height: 50px;
+    min-width: 100px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Hover effect */
+.payslip-slot:hover {
+    border: 2px dashed blue;
+}
+
 
 .word-container {
     border: 1px solid #b3afeb;
-    border-radius: 5px; 
+    border-radius: 5px;
     text-align: right;
     padding: 5px;
     background-color: #b3afeb;
     margin-bottom: 5px;
     font-size: 12px;
-  
+
 }
+
+
+
+/*
+    minHeight: '50px',
+    minWidth: '100px',
+    margin: '5px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: slot ? '#b3afeb' : '#f9f9f9',
+*/
