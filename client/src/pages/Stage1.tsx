@@ -9,15 +9,18 @@ type WordItem = {
 };
 
 const INITIAL_WORDS_LIST: WordItem[] = [
-  { id: 1, value: 'תאריך' },
-  { id: 2, value: 'לכבוד' },
-  { id: 3, value: 'ותק' },
+  { id: 1, value: 'פרטי החברה' },
+  { id: 2, value: 'תאריך' },
+  { id: 3, value: 'לכבוד' },
+  { id: 4, value: 'שם מלא עובד' },
+  { id: 5, value: 'כתובת' },
+  { id: 6, value: 'פרטים אישיים' },
+  { id: 7, value: 'ת"ז עובד' },
 ];
 
 function Stage1() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
-  const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null]);
-  const [employeeBasicDetails, setEmployeeBasicDetails] = useState<(WordItem | null)[]>([null, null]); 
+  const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null, null, null, null, null]);
 
   const createDrop = (index: number) =>
     useDrop<
@@ -64,26 +67,30 @@ function Stage1() {
                 key={index}
                 ref={dropRef}
                 className={`payslip-slot slot-${index}`}
-               
+
               >
                 {slot ? (
                   <div className="word-container">{slot.value}</div>
                 ) : (
                   'Drop Here'
                 )}
+
               </div>
             );
           })}
 
-          
+
         </div>
       </div>
 
       <div className="Words-bank-container">
         <p>בנק מילים</p>
-        {wordBank.map((word) => (
-          <Word key={word.id} word={word} />
-        ))}
+        <div className='words-container'>
+          {wordBank.map((word) => (
+            <Word key={word.id} word={word} />
+          ))}
+        </div>
+
       </div>
     </div>
   );

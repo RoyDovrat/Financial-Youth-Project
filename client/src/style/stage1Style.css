@@ -52,6 +52,44 @@ body {
     width: 70px;
 }
 
+.slot-3 {
+    position: absolute;
+    top: 119px;
+    right: 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 140px;
+}
+
+.slot-4 {
+    position: absolute;
+    top: 150px;
+    right: 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 140px;
+}
+
+.slot-5 {
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    border-radius: 5px;
+    height: 163px;
+    width: 163px;
+    /* Top-left corner */
+}
+
+.slot-6 {
+    position: absolute;
+    top: 86px;
+    left: 96px;
+    border-radius: 5px;
+    height: 20px;
+    width: 70px;
+    /* Top-left corner */
+}
+
 /* Slot base styles */
 .payslip-slot {
     border: 1px solid gray;
@@ -68,17 +106,18 @@ body {
     border: 2px dashed blue;
 }
 
+.words-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    max-width: 398px;
+}
 
-.word-container {
-    border: 1px solid #b3afeb;
-    border-radius: 5px;
-    text-align: right;
-    padding: 5px;
-    background-color: #b3afeb;
-    margin-bottom: 5px;
-    font-size: 12px;
+.Words-bank-container{
+    align-items: right;
 
 }
+
 
 
 
