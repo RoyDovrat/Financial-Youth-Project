@@ -3,7 +3,7 @@ import { useDrop } from 'react-dnd';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import '../style/stage1Style.css';
+import '../style/stage2Style.css';
 import Word from '../components/Word';
 
 const STAGE_NUMBER = 2
@@ -65,12 +65,12 @@ function Stage2() {
       </div>
 
       {/* Progress Bar with Label */}
-      <Box sx={{ width: '100%', margin: '30px 0' }}>
+    {/*  <Box sx={{ width: '100%', margin: '30px 0' }}>
         <Typography variant="body2" component="div" align="left" gutterBottom>
           {STAGE_NUMBER} / {TOTAL_STAGES}
         </Typography>
         <LinearProgress variant="determinate" value={PROGRESS} />
-      </Box>
+      </Box>*/}
 
       <div className="payslip-container">
         <div className="payslip-board">

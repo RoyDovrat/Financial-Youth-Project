@@ -1,27 +1,27 @@
 body {
     background-color: #e6e5f3;
-    /*font-family: var(--fonts-primary);*/
     font-size: 14px;
     margin: 0;
     justify-content: center;
-    text-align: right;
+    text-align: right;  
+     
+}
+
+.title {
+    margin-bottom: 0px;
+}
+
+.page-stage1{
+    
 }
 
 .payslip-container {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
 
 }
-/*
-.payslip-board {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    margin: auto;
-}
-*/
+
 .slot-0 {
     position: absolute;
     border-radius: 5px;
@@ -114,31 +114,16 @@ body {
 
 }
 
-/*
-.employee-details-image{
-    max-width: 298px;
-    border: 2px solid blue;
-    filter: blur(1px);
-}
-
-.payments-image{
-    max-width: 298px;
-  
-}
-    */
-
 .payslip-board {
     position: relative;
-    width: 100%;
+    /*width: 100%;*/
     max-width: 400px;
     height: auto;
-    /* Update height to auto to allow flexible layout */
     margin: auto;
     display: flex;
     flex-direction: column;
-    /* Stack child elements vertically */
     align-items: center;
-    /* Align items to the start (left) */
+
 }
 
 .employee-details-image {
@@ -146,18 +131,19 @@ body {
     border: 2px solid blue;
     filter: blur(1px);
     margin-bottom: 10px;
-    
+
 }
 
 .payments-image {
     max-width: 70%;
     margin-left: 30%;
-    margin-top: -9px;
+    margin-top: -8px;
     border: 2px solid darkgoldenrod;
     filter: blur(1px);
 }
 
-.mandatoryDeductions-image{
+
+.mandatoryDeductions-image {
     max-width: 25%;
     margin-top: -180px;
     border: 2px solid green;
@@ -165,11 +151,37 @@ body {
     filter: blur(1px);
 }
 
-.additionalData-image{
-    max-width: 25%;
-    margin-top: -180px;
+.additionalData-image {
+    max-width: 70%;
+    margin-top: 2px;
     border: 2px solid purple;
+    filter: blur(1px);
+    align-self: flex-start;
+    margin-left: 118px;
+
+}
+
+.salary-image {
+    max-width: 25%;
+    margin-top: -123px;
+    margin-right: 297px;
+    filter: blur(1px);
+}
+
+.deductionsAllowed-image {
+    max-width: 25%;
+    margin-top: 4px;
+    border: 2px solid green;
+    margin-right: 301px;
+    filter: blur(1px);
+}
+
+.payment-image {
+    max-width: 25%;
+    margin-top: 3px;
+    border: 2px solid lightblue;
     margin-right: 301px;
     filter: blur(1px);
 
 }
+
