@@ -10,7 +10,7 @@ import victory from '../images/victory.avif';
 import '../style/Stage2Style.scss';
 
 
-const STAGE_NUMBER = 2
+const STAGE_NUMBER = 1
 const TOTAL_STAGES = 3
 const PROGRESS = (STAGE_NUMBER / TOTAL_STAGES) * 100;
 
@@ -28,7 +28,7 @@ const INITIAL_WORDS_LIST: WordItem[] = [
   { id: 6, value: 'ניכויים (רשות)' },
 ];
 
-function Stage2() {
+function Stage3() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
   const [slots, setSlots] = useState<(WordItem | null)[]>([null]);
   const navigate = useNavigate();
@@ -63,7 +63,7 @@ function Stage2() {
 
   };
   const closeAndNextStage = () => {
-    navigate('/stage3');
+    navigate('/stage2');
 
   };
 
@@ -71,11 +71,6 @@ function Stage2() {
     dialogRef.current?.close();
     setSlots([null])
     setWordBank(INITIAL_WORDS_LIST)
-  };
-
-  const backToPrevStage = () => {
-    navigate('/');
-
   };
 
 
@@ -86,7 +81,7 @@ function Stage2() {
   };
 
   return (
-    <div className='page-stage2'>
+    <div className='page-stage3'>
       <div >
         <h1 className='title'>להשלים את התלוש</h1>
         <p className='instructions'>בחרו מילה מתוך בנק המילים</p>
@@ -124,7 +119,7 @@ function Stage2() {
 
         </div>
       </div>
-
+      
       {/*words bank */}
       <div className="Words-bank-container">
         <p className='bank-title'>בנק מילים</p>
@@ -147,10 +142,10 @@ function Stage2() {
           </div>
         </div>
       </dialog>
-      <button className="prev-stage-button" onClick={backToPrevStage}>שלב הקודם</button>
+
       <button className="next-stage-button" onClick={open} disabled={slots.some((slot) => slot === null)}>שלב הבא</button>
     </div>
   );
 }
 
-export default Stage2;
+export default Stage3;

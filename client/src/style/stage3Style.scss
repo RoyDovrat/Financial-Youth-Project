@@ -1,9 +1,10 @@
-.page-stage2 {
+.page-stage3 {
 
     .title {
         margin-bottom: 30px;
         color: #54177cf2;
     }
+
 
     .instructions {
         color: #54177cf2;
@@ -139,9 +140,61 @@
         position: relative;
         max-width: 100%;
         border: 2px solid blue;
+        filter: blur(1px);
         margin-bottom: 10px;
+
     }
 
+    .payments-image {
+        max-width: 70%;
+        margin-left: 30%;
+        margin-top: -8px;
+        border: 2px solid darkgoldenrod;
+        filter: blur(1px);
+    }
+
+
+    .mandatoryDeductions-image {
+        max-width: 25%;
+        margin-top: -180px;
+        border: 2px solid green;
+        margin-right: 301px;
+        filter: blur(1px);
+    }
+
+    .additionalData-image {
+        max-width: 70%;
+        margin-top: 2px;
+        border: 2px solid purple;
+        filter: blur(1px);
+        align-self: flex-start;
+        margin-left: 118px;
+
+    }
+
+    .salary-image {
+        max-width: 25%;
+        margin-top: -123px;
+        margin-right: 297px;
+        filter: blur(1px);
+    }
+
+    .deductionsAllowed-image {
+        max-width: 25%;
+        margin-top: 4px;
+        border: 2px solid green;
+        margin-right: 301px;
+        filter: blur(1px);
+    }
+
+    .payment-image {
+        max-width: 25%;
+        margin-top: 3px;
+        border: 2px solid lightblue;
+        margin-right: 301px;
+        filter: blur(1px);
+
+    }
 
     dialog {
         padding: 0;
@@ -194,22 +247,6 @@
             }
         }
 
-    }
-
-    .prev-stage-button {
-        position: absolute;
-        left: 345px;
-        top: 109px;
-        background-color: lightgray;
-        border-color: #c5c5c5;
-        border-radius: 5px;
-        min-width: 115px;
-        min-height: 30px;
-        margin-inline: -65px;
-
-        &:hover {
-            background-color: gray; // Darker color on hover
-        }
     }
 
     .next-stage-button {
