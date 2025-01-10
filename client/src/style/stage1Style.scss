@@ -1,0 +1,181 @@
+.page-stage1 {
+
+
+    .title {
+        margin-bottom: 0px;
+    }
+
+    .slot-0 {
+        position: absolute;
+        border-radius: 5px;
+        width: 160px;
+        height: 30px;
+        top: 55px;
+        right: -71px;
+    }
+
+    .slot-1 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border-radius: 5px;
+        height: 30px;
+        width: 70px;
+    }
+
+    .slot-2 {
+        position: absolute;
+        top: 85px;
+        right: 10px;
+        border-radius: 5px;
+        height: 30px;
+        width: 70px;
+    }
+
+    .slot-3 {
+        position: absolute;
+        top: 119px;
+        right: 10px;
+        border-radius: 5px;
+        height: 30px;
+        width: 140px;
+    }
+
+    .slot-4 {
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        border-radius: 5px;
+        height: 30px;
+        width: 140px;
+    }
+
+    .slot-5 {
+        position: absolute;
+        top: 75px;
+        left: 10px;
+        border-radius: 5px;
+        height: 163px;
+        width: 163px;
+    }
+
+    .slot-6 {
+        position: absolute;
+        top: 86px;
+        left: 96px;
+        border-radius: 5px;
+        height: 20px;
+        width: 70px;
+    }
+
+
+
+    .payslip-slot {
+        border: 1px solid gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .payslip-slot:hover {
+        border: 2px dashed blue;
+    }
+
+    .words-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        max-width: 398px;
+        flex-direction: row-reverse;
+        justify-content: stretch;
+        gap: 5px;
+        align-content: space-around;
+    }
+
+    .Words-bank-container {
+        max-width: 400px;
+        position: absolute;
+        right: 215px;
+
+    }
+
+    .payslip-container {}
+
+    .payslip-board {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+        background-color: white;
+        /*width: 100%;*/
+        max-width: 400px;
+        height: auto;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .employee-details-image {
+        position: relative;
+        max-width: 100%;
+        border: 2px solid blue;
+        filter: blur(1px);
+        margin-bottom: 10px;
+
+    }
+
+    .payments-image {
+        max-width: 70%;
+        margin-left: 30%;
+        margin-top: -8px;
+        border: 2px solid darkgoldenrod;
+        filter: blur(1px);
+    }
+
+
+    .mandatoryDeductions-image {
+        max-width: 25%;
+        margin-top: -180px;
+        border: 2px solid green;
+        margin-right: 301px;
+        filter: blur(1px);
+    }
+
+    .additionalData-image {
+        max-width: 70%;
+        margin-top: 2px;
+        border: 2px solid purple;
+        filter: blur(1px);
+        align-self: flex-start;
+        margin-left: 118px;
+
+    }
+
+    .salary-image {
+        max-width: 25%;
+        margin-top: -123px;
+        margin-right: 297px;
+        filter: blur(1px);
+    }
+
+    .deductionsAllowed-image {
+        max-width: 25%;
+        margin-top: 4px;
+        border: 2px solid green;
+        margin-right: 301px;
+        filter: blur(1px);
+    }
+
+    .payment-image {
+        max-width: 25%;
+        margin-top: 3px;
+        border: 2px solid lightblue;
+        margin-right: 301px;
+        filter: blur(1px);
+
+    }
+
+}

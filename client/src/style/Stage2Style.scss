@@ -1,0 +1,108 @@
+.page-stage2 {
+
+    .payslip-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+
+    }
+
+    .payslip-board {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        height: 300px;
+        margin: auto;
+    }
+
+    .slot-0 {
+        position: absolute;
+        border-radius: 5px;
+        width: 250px;
+        height: 30px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .slot-1 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border-radius: 5px;
+        height: 30px;
+        width: 70px;
+    }
+
+    .slot-2 {
+        position: absolute;
+        top: 85px;
+        right: 10px;
+        border-radius: 5px;
+        height: 30px;
+        width: 70px;
+    }
+
+    .slot-3 {
+        position: absolute;
+        top: 119px;
+        right: 10px;
+        border-radius: 5px;
+        height: 30px;
+        width: 140px;
+    }
+
+    .slot-4 {
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        border-radius: 5px;
+        height: 30px;
+        width: 140px;
+    }
+
+    .slot-5 {
+        position: absolute;
+        top: 75px;
+        left: 10px;
+        border-radius: 5px;
+        height: 163px;
+        width: 163px;
+    }
+
+    .slot-6 {
+        position: absolute;
+        top: 86px;
+        left: 96px;
+        border-radius: 5px;
+        height: 20px;
+        width: 70px;
+    }
+
+    .payslip-slot {
+        border: 1px solid gray;
+        /*min-height: 50px;
+    min-width: 100px;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, border 0.3s ease;
+    }
+
+    .payslip-slot:hover {
+        border: 2px dashed blue;
+    }
+
+    .words-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        max-width: 398px;
+    }
+
+    .Words-bank-container {
+        align-items: right;
+
+    }
+
+
+}

@@ -3,7 +3,7 @@ import { useDrop } from 'react-dnd';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import '../style/stage2Style.css';
+import '../style/Stage2Style.scss';
 import Word from '../components/Word';
 
 const STAGE_NUMBER = 2
@@ -57,7 +57,7 @@ function Stage2() {
   };
 
   return (
-    <div className='page-stage1'>
+    <div className='page-stage2'>
       <div className='instructions'>
         <h1>להשלים את התלוש</h1>
         <p>בחרו מילה מתוך בנק המילים</p>

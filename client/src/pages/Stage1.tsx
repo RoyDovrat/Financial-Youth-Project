@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import '../style/stage1Style.css';
+import '../style/stage1Style.scss';
 import Word from '../components/Word';
 import employeeAndEmployerDetails from '../images/EmployeeAndEmployerDetails.png';
 import payments from '../images/payments.png';
@@ -37,7 +37,7 @@ const INITIAL_WORDS_LIST: WordItem[] = [
 function Stage1() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
   const [slots, setSlots] = useState<(WordItem | null)[]>([null]);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const createDrop = (index: number) =>
     useDrop<
@@ -63,10 +63,11 @@ function Stage1() {
       );
     }
   };
-
+/*
   const handleNextStage = () => {
     navigate('/stage2'); // Navigate to the next stage
   };
+*/
 
   return (
     <div className='page-stage1'>
@@ -131,9 +132,9 @@ function Stage1() {
 
       </div>
 
-      <button className="next-stage-button" onClick={handleNextStage}>
+    {/*  <button className="next-stage-button" onClick={handleNextStage}>
         השלב הבא
-      </button>
+      </button>*/}
     </div>
   );
 }

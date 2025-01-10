@@ -1,11 +1,9 @@
 .word-container {
-    border: 1px solid #b3afeb;
     border-radius: 5px;
     text-align: center;
     background-color: #b3afeb;
-    margin-left: 5px;
-    margin-bottom: 5px;
     font-size: 12px;
-    max-height: 36px;
-    min-width: 50px;
+    min-width: 95px;
+    
 }
+
