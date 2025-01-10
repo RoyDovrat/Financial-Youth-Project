@@ -20,17 +20,17 @@ type WordItem = {
 };
 
 const INITIAL_WORDS_LIST: WordItem[] = [
-  { id: 1, value: 'פרטי עובד ומעביד' },
-  { id: 2, value: 'נתונים נוספים' },
-  { id: 3, value: 'ניכויים (חובה)' },
-  { id: 4, value: 'תשלומים (שכר והחזרי הוצאות)' },
-  { id: 5, value: 'התשלום' },
-  { id: 6, value: 'ניכויים (רשות)' },
+  { id: 1, value: 'פרטי החברה' },
+  { id: 2, value: 'פרטים אישיים' },
+  { id: 3, value: 'לכבוד' },
+  { id: 4, value: 'פרטי חשבון בנק' },
+  { id: 5, value: 'תאריך תחילת עבודה' },
+  { id: 6, value: 'תיק ניכויים' },
 ];
 
 function Stage2() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
-  const [slots, setSlots] = useState<(WordItem | null)[]>([null]);
+  const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null, null, null, null]);
   const navigate = useNavigate();
 
   const createDrop = (index: number) =>

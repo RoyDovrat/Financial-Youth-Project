@@ -13,69 +13,68 @@
 
     .slot-0 {
         position: absolute;
-        border-radius: 12px;
+        border-radius: 3px;
         width: 160px;
-        height: 30px;
-        top: 55px;
-        right: -71px;
-        border: 2px solid blue;
-        background-color: blue;
+        height: 31px;
+        top: 18px;
+        right: 13px;
+        border: 1px solid black;
+        background-color: white;
     }
 
     .slot-1 {
         position: absolute;
-        bottom: 55px;
-        right: -71px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid purple;
-        background-color: purple;
+        bottom: 120px;
+        right: 305px;
+        border-radius: 3px;
+        height: 18px;
+        width: 140px;
+        border: 1px solid black;
+        background-color: white;
     }
 
     .slot-2 {
         position: absolute;
-        top: 161px;
-        right: 340px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid green;
-        background-color: green;
+        top: 84px;
+        right: 14px;
+        border-radius: 3px;
+        height: 22px;
+        width: 100px;
+        border: 1px solid black;
+        background-color: white;
     }
 
     .slot-3 {
         position: absolute;
-        top: 202px;
-        right: -71px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid darkgoldenrod;
-        background-color: darkgoldenrod;
+        top: 153px;
+        right: 258px;
+        border-radius: 3px;
+        height: 15px;
+        width: 169px;
+        border: 1px solid black;
+        background-color: white;
     }
 
     .slot-4 {
         position: absolute;
-        bottom: -18px;
-        right: 340px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid lightblue;
-        background-color: lightblue;
-
+        bottom: 67px;
+        right: 400px;
+        border-radius: 3px;
+        height: 20px;
+        width: 102px;
+        border: 1px solid black;
+        background-color: white;
     }
 
     .slot-5 {
         position: absolute;
-        bottom: 55px;
-        right: 340px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid green;
-        background-color: green;
+        bottom: 168px;
+        right: 209px;
+        border-radius: 3px;
+        height: 15px;
+        width: 90px;
+        border: 1px solid black;
+        background-color: white;
     }
 
 
@@ -125,8 +124,7 @@
         border-radius: 5px;
         position: relative;
         background-color: white;
-        /*width: 100%;*/
-        max-width: 400px;
+        max-width: 500px;
         height: auto;
         margin: auto;
         display: flex;
@@ -138,8 +136,9 @@
     .employee-details-image {
         position: relative;
         max-width: 100%;
-        border: 2px solid blue;
+        border: 2px solid black;
         margin-bottom: 10px;
+        border-radius: 5px;
     }
 
 
