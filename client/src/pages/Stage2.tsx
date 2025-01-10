@@ -26,11 +26,13 @@ const INITIAL_WORDS_LIST: WordItem[] = [
   { id: 4, value: 'פרטי חשבון בנק' },
   { id: 5, value: 'תאריך תחילת עבודה' },
   { id: 6, value: 'תיק ניכויים' },
+  { id: 7, value: 'שם מלא+כתובת' },
+
 ];
 
 function Stage2() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
-  const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null, null, null, null]);
+  const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null, null, null, null, null]);
   const navigate = useNavigate();
 
   const createDrop = (index: number) =>

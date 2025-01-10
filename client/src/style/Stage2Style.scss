@@ -35,7 +35,7 @@
 
     .slot-2 {
         position: absolute;
-        top: 84px;
+        top: 82px;
         right: 14px;
         border-radius: 3px;
         height: 22px;
@@ -46,7 +46,7 @@
 
     .slot-3 {
         position: absolute;
-        top: 153px;
+        top: 152px;
         right: 258px;
         border-radius: 3px;
         height: 15px;
@@ -57,11 +57,11 @@
 
     .slot-4 {
         position: absolute;
-        bottom: 67px;
+        bottom: 57px;
         right: 400px;
         border-radius: 3px;
-        height: 20px;
-        width: 102px;
+        height: 29px;
+        width: 105px;
         border: 1px solid black;
         background-color: white;
     }
@@ -69,14 +69,24 @@
     .slot-5 {
         position: absolute;
         bottom: 168px;
-        right: 209px;
+        right: 205px;
         border-radius: 3px;
         height: 15px;
-        width: 90px;
+        width: 97px;
         border: 1px solid black;
         background-color: white;
     }
 
+    .slot-6 {
+        position: absolute;
+        bottom: 48px;
+        right: 15px;
+        border-radius: 3px;
+        height: 40px;
+        width: 196px;
+        border: 1px solid black;
+        background-color: white;
+    }
 
     .payslip-slot {
         //border: 2px solid #54177cf2;
