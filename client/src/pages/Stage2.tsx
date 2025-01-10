@@ -71,7 +71,7 @@ function Stage2() {
 
   const closeAndCurrentStage = () => {
     dialogRef.current?.close();
-    setSlots([null])
+    setSlots([null, null, null, null, null, null, null])
     setWordBank(INITIAL_WORDS_LIST)
   };
 

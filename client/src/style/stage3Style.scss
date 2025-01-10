@@ -5,7 +5,6 @@
         color: #54177cf2;
     }
 
-
     .instructions {
         color: #54177cf2;
         font-weight: 500;
@@ -14,71 +13,72 @@
 
     .slot-0 {
         position: absolute;
-        border-radius: 12px;
-        width: 160px;
-        height: 30px;
-        top: 55px;
-        right: -71px;
-        border: 2px solid blue;
-        background-color: blue;
+        border-radius: 3px;
+        width: 122px;
+        height: 18px;
+        top: 95px;
+        right: 372px;
+        border: 1px solid black;
+        background-color: white;
     }
+
 
     .slot-1 {
         position: absolute;
-        bottom: 55px;
-        right: -71px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid purple;
-        background-color: purple;
+        bottom: 195px;
+        right: 14px;
+        border-radius: 3px;
+        height: 18px;
+        width: 100px;
+        border: 1px solid black;
+        background-color: white;
     }
+
 
     .slot-2 {
         position: absolute;
-        top: 161px;
-        right: 340px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid green;
-        background-color: green;
+        top: 13px;
+        right: 372px;
+        border-radius: 3px;
+        height: 18px;
+        width: 122px;
+        border: 1px solid black;
+        background-color: white;
     }
 
     .slot-3 {
         position: absolute;
-        top: 202px;
-        right: -71px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid darkgoldenrod;
-        background-color: darkgoldenrod;
+        top: 106px;
+        right: 254px;
+        border-radius: 3px;
+        height: 18px;
+        width: 100px;
+        border: 1px solid black;
+        background-color: white;
     }
 
+    
     .slot-4 {
         position: absolute;
-        bottom: -18px;
-        right: 340px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid lightblue;
-        background-color: lightblue;
-
+        top: 13px;
+        right: 226px;
+        border-radius: 3px;
+        height: 18px;
+        width: 122px;
+        border: 1px solid black;
+        background-color: white;
     }
 
     .slot-5 {
         position: absolute;
-        bottom: 55px;
-        right: 340px;
-        border-radius: 12px;
-        height: 30px;
-        width: 160px;
-        border: 2px solid green;
-        background-color: green;
+        top: 13px;
+        right: 57px;
+        border-radius: 3px;
+        height: 15px;
+        width: 122px;
+        border: 1px solid black;
+        background-color: white;
     }
-
 
     .payslip-slot {
         //border: 2px solid #54177cf2;
@@ -126,8 +126,7 @@
         border-radius: 5px;
         position: relative;
         background-color: white;
-        /*width: 100%;*/
-        max-width: 400px;
+        max-width: 500px;
         height: auto;
         margin: auto;
         display: flex;
@@ -136,65 +135,14 @@
 
     }
 
-    .employee-details-image {
+    .additionalData-image {
         position: relative;
         max-width: 100%;
-        border: 2px solid blue;
-        filter: blur(1px);
+        border: 2px solid black;
         margin-bottom: 10px;
-
+        border-radius: 5px;
     }
 
-    .payments-image {
-        max-width: 70%;
-        margin-left: 30%;
-        margin-top: -8px;
-        border: 2px solid darkgoldenrod;
-        filter: blur(1px);
-    }
-
-
-    .mandatoryDeductions-image {
-        max-width: 25%;
-        margin-top: -180px;
-        border: 2px solid green;
-        margin-right: 301px;
-        filter: blur(1px);
-    }
-
-    .additionalData-image {
-        max-width: 70%;
-        margin-top: 2px;
-        border: 2px solid purple;
-        filter: blur(1px);
-        align-self: flex-start;
-        margin-left: 118px;
-
-    }
-
-    .salary-image {
-        max-width: 25%;
-        margin-top: -123px;
-        margin-right: 297px;
-        filter: blur(1px);
-    }
-
-    .deductionsAllowed-image {
-        max-width: 25%;
-        margin-top: 4px;
-        border: 2px solid green;
-        margin-right: 301px;
-        filter: blur(1px);
-    }
-
-    .payment-image {
-        max-width: 25%;
-        margin-top: 3px;
-        border: 2px solid lightblue;
-        margin-right: 301px;
-        filter: blur(1px);
-
-    }
 
     dialog {
         padding: 0;
@@ -247,6 +195,22 @@
             }
         }
 
+    }
+
+    .prev-stage-button {
+        position: absolute;
+        left: 345px;
+        top: 109px;
+        background-color: lightgray;
+        border-color: #c5c5c5;
+        border-radius: 5px;
+        min-width: 115px;
+        min-height: 30px;
+        margin-inline: -65px;
+
+        &:hover {
+            background-color: gray; // Darker color on hover
+        }
     }
 
     .next-stage-button {

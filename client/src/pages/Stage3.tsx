@@ -5,12 +5,12 @@ import { MouseEvent, useRef, useState } from 'react';
 import { useDrop } from 'react-dnd';
 import { useNavigate } from 'react-router-dom';
 import Word from '../components/Word';
-import employeeAndEmployerDetails from '../images/EmployeeAndEmployerDetails.png';
+import additionalData from '../images/additional data.png';
 import victory from '../images/victory.avif';
-import '../style/Stage2Style.scss';
+import '../style/stage3Style.scss';
 
 
-const STAGE_NUMBER = 1
+const STAGE_NUMBER = 3
 const TOTAL_STAGES = 3
 const PROGRESS = (STAGE_NUMBER / TOTAL_STAGES) * 100;
 
@@ -20,17 +20,17 @@ type WordItem = {
 };
 
 const INITIAL_WORDS_LIST: WordItem[] = [
-  { id: 1, value: 'פרטי עובד ומעביד' },
-  { id: 2, value: 'נתונים נוספים' },
-  { id: 3, value: 'ניכויים (חובה)' },
-  { id: 4, value: 'תשלומים (שכר והחזרי הוצאות)' },
-  { id: 5, value: 'התשלום' },
-  { id: 6, value: 'ניכויים (רשות)' },
+  { id: 1, value: 'חשבון מחלה' },
+  { id: 2, value: 'ימי עבודה' },
+  { id: 3, value: ' חשבון חופשה' },
+  { id: 3, value: 'פנסיה' },
+  { id: 5, value: 'נתונים מצטברים' },
+  { id: 6, value: 'נתונים נוספים' },
 ];
 
 function Stage3() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
-  const [slots, setSlots] = useState<(WordItem | null)[]>([null]);
+  const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null, null, null, null]);
   const navigate = useNavigate();
 
   const createDrop = (index: number) =>
@@ -63,14 +63,19 @@ function Stage3() {
 
   };
   const closeAndNextStage = () => {
-    navigate('/stage2');
+    navigate('/stage3');
 
   };
 
   const closeAndCurrentStage = () => {
     dialogRef.current?.close();
-    setSlots([null])
+    setSlots([null, null, null, null, null, null])
     setWordBank(INITIAL_WORDS_LIST)
+  };
+
+  const backToPrevStage = () => {
+    navigate('/');
+
   };
 
 
@@ -105,7 +110,7 @@ function Stage3() {
       <div className="payslip-container">
         <div className="payslip-board">
           {/*images of payslip */}
-          <img src={employeeAndEmployerDetails} alt="Employee and Employer Details" className="employee-details-image" />
+          <img src={additionalData} alt="additionalData" className="additionalData-image" />
 
           {/*areas to drop the suitable words */}
           {slots.map((slot, index) => {
@@ -119,7 +124,7 @@ function Stage3() {
 
         </div>
       </div>
-      
+
       {/*words bank */}
       <div className="Words-bank-container">
         <p className='bank-title'>בנק מילים</p>
@@ -142,7 +147,7 @@ function Stage3() {
           </div>
         </div>
       </dialog>
-
+      <button className="prev-stage-button" onClick={backToPrevStage}>שלב הקודם</button>
       <button className="next-stage-button" onClick={open} disabled={slots.some((slot) => slot === null)}>שלב הבא</button>
     </div>
   );
