@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
-import { MouseEvent, useRef, useState } from 'react';
+import { MouseEvent, useRef, useState, useEffect } from 'react';
 import { useDrop } from 'react-dnd';
 import { useNavigate } from 'react-router-dom';
 import Word from '../components/Word';
@@ -34,6 +34,12 @@ function Stage2() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
   const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null, null, null, null, null]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!slots.some((slot) => slot === null)) {
+      open();
+    }
+  }, [slots]);
 
   const createDrop = (index: number) =>
     useDrop<{ id: number; value: string }, void, { isOver: boolean }>
@@ -150,7 +156,6 @@ function Stage2() {
         </div>
       </dialog>
       <button className="prev-stage-button" onClick={backToPrevStage}>שלב הקודם</button>
-      <button className="next-stage-button" onClick={open} disabled={slots.some((slot) => slot === null)}>שלב הבא</button>
     </div>
   );
 }

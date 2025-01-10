@@ -249,20 +249,4 @@
 
     }
 
-    .next-stage-button {
-        position: absolute;
-        left: 224px;
-        top: 109px;
-        background-color: lightgray;
-        border-color: #c5c5c5;
-        border-radius: 5px;
-        min-width: 115px;
-        min-height: 30px;
-        margin-inline: -65px;
-
-        &:hover {
-            background-color: gray; // Darker color on hover
-        }
-    }
-
 }

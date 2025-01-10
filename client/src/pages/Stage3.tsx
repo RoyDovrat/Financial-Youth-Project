@@ -3,6 +3,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import { MouseEvent, useRef, useState } from 'react';
 import { useDrop } from 'react-dnd';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Word from '../components/Word';
 import additionalData from '../images/additional data.png';
@@ -23,7 +24,7 @@ const INITIAL_WORDS_LIST: WordItem[] = [
   { id: 1, value: 'חשבון מחלה' },
   { id: 2, value: 'ימי עבודה' },
   { id: 3, value: ' חשבון חופשה' },
-  { id: 3, value: 'פנסיה' },
+  { id: 4, value: 'פנסיה' },
   { id: 5, value: 'נתונים מצטברים' },
   { id: 6, value: 'נתונים נוספים' },
 ];
@@ -32,6 +33,12 @@ function Stage3() {
   const [wordBank, setWordBank] = useState<WordItem[]>(INITIAL_WORDS_LIST);
   const [slots, setSlots] = useState<(WordItem | null)[]>([null, null, null, null, null, null]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!slots.some((slot) => slot === null)) {
+      open();
+    }
+  }, [slots]);
 
   const createDrop = (index: number) =>
     useDrop<{ id: number; value: string }, void, { isOver: boolean }>
@@ -60,10 +67,10 @@ function Stage3() {
 
   const open = () => {
     dialogRef.current?.showModal();
-
   };
+
   const closeAndNextStage = () => {
-    navigate('/stage3');
+    navigate('/');
 
   };
 
@@ -139,16 +146,15 @@ function Stage3() {
       <dialog ref={dialogRef} onClick={dialogClick}>
         <div className="dialog-content">
           <div className="dialog-title">!אליפות</div>
-          <p className="dialog-message">עברת את השלב</p>
+          <p className="dialog-message">הצלחת להשלים את התלוש</p>
           <img src={victory} alt="victory" className="victory-image" />
           <div className="buttons">
-            <button className='nextStage-button' onClick={closeAndNextStage}>שלב הבא</button>
-            <button className='currentStage-button' onClick={closeAndCurrentStage}>שחק שוב</button>
+          <button className='nextStage-button' onClick={closeAndNextStage}>חזור להתחלה</button>
+          <button className='currentStage-button' onClick={closeAndCurrentStage}>שחק שוב</button>
           </div>
         </div>
       </dialog>
       <button className="prev-stage-button" onClick={backToPrevStage}>שלב הקודם</button>
-      <button className="next-stage-button" onClick={open} disabled={slots.some((slot) => slot === null)}>שלב הבא</button>
     </div>
   );
 }
