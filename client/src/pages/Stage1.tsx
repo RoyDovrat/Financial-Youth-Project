@@ -41,17 +41,14 @@ function Stage1() {
   const navigate = useNavigate();
 
   const createDrop = (index: number) =>
-    useDrop<
-      { id: number; value: string },
-      void,
-      { isOver: boolean }
-    >({
-      accept: 'WORD',
-      drop: (item) => handleDrop(item, index),
-      collect: (monitor) => ({
-        isOver: !!monitor.isOver(),
-      }),
-    });
+    useDrop<{ id: number; value: string }, void, { isOver: boolean }>
+      ({
+        accept: 'WORD',
+        drop: (item) => handleDrop(item, index),
+        collect: (monitor) => ({
+          isOver: !!monitor.isOver(),
+        }),
+      });
 
   const handleDrop = (item: { id: number; value: string }, index: number) => {
     if (item.id - 1 === index && !slots[index]) {
@@ -70,7 +67,7 @@ function Stage1() {
 
   const open = () => {
     dialogRef.current?.showModal();
-    //dialogRef.current?.show();
+
   };
   const closeAndNextStage = () => {
     navigate('/stage2');
@@ -114,7 +111,7 @@ function Stage1() {
 
       <div className="payslip-container">
         <div className="payslip-board">
-
+          {/*images of payslip */}
           <img src={employeeAndEmployerDetails} alt="Employee and Employer Details" className="employee-details-image" />
           <img src={payments} alt="payments" className="payments-image" />
           <img src={mandatoryDeductions} alt="mandatoryDeductions" className="mandatoryDeductions-image" />
@@ -123,31 +120,20 @@ function Stage1() {
           <img src={deductionsAllowed} alt="deductionsAllowed" className="deductionsAllowed-image" />
           <img src={payment} alt="payment" className="payment-image" />
 
-
-
+          {/*areas to drop the suitable words */}
           {slots.map((slot, index) => {
             const [{ isOver }, dropRef] = createDrop(index);
-
             return (
-              <div
-                key={index}
-                ref={dropRef}
-                className={`payslip-slot slot-${index}`}
-
-              >
-                {slot ? (<div className="word-container">{slot.value}</div>) :
-                  (
-                    ''
-                  )}
-
+              <div key={index} ref={dropRef} className={`payslip-slot slot-${index}`} >
+                {slot ? (<div className="word-container">{slot.value}</div>) : ('')}
               </div>
             );
           })}
 
-
         </div>
       </div>
-
+      
+      {/*words bank */}
       <div className="Words-bank-container">
         <p className='bank-title'>בנק מילים</p>
         <div className='words-container'>
@@ -155,29 +141,19 @@ function Stage1() {
             <Word key={word.id} word={word} />
           ))}
         </div>
-
       </div>
-
-      {/*  <button className="next-stage-button" onClick={handleNextStage}>
-        השלב הבא
-      </button>*/}
 
       {/*pop-up */}
       <dialog ref={dialogRef} onClick={dialogClick}>
         <div className="dialog-content">
-          
           <div className="dialog-title">!אליפות</div>
           <p className="dialog-message">עברת את השלב</p>
-          
-            <img src={victory} alt="victory" className="victory-image" />
-        
-
+          <img src={victory} alt="victory" className="victory-image" />
           <div className="buttons">
             <button className='nextStage-button' onClick={closeAndNextStage}>שלב הבא</button>
             <button className='currentStage-button' onClick={closeAndCurrentStage}>שחק שוב</button>
           </div>
         </div>
-
       </dialog>
 
       <button className="next-stage-button" onClick={open} disabled={slots.some((slot) => slot === null)}>שלב הבא</button>
