@@ -1,18 +1,11 @@
-const uuid = require('uuid').v4
 const multer = require('multer');
 const path = require('path');
-const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+const uuid = require("uuid").v4;
 
-/*
-const storage = multer.diskStorage({
-    destination: 'uploads/', // temporary directory
-    filename: (req, file, cb) => {
-        const { originalname } = file;
-        const ext = path.extname(originalname); // get file extension
-        cb(null, `${uuid()}${ext}`);
-    },
-});
-*/
+/* in case we want to use aws s3 with secret key
+
+const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+const storage = multer.memoryStorage();
 
   const s3Uploadv3 = async (files) => {
   const s3client = new S3Client({ region: process.env.AWS_REGION });
@@ -37,8 +30,17 @@ const storage = multer.diskStorage({
     throw new Error(`S3 upload failed: ${error.message}`);
   }
 };
+*/
 
-const storage = multer.memoryStorage();
+ const storage = multer.diskStorage({
+   destination: (req, file, cb) => {
+     cb(null, "uploads");
+   },
+   filename: (req, file, cb) => {
+     const { originalname } = file;
+     cb(null, `${uuid()}-${originalname}`);
+   },
+ });
 
 const fileFilter = (req, file, cb) => {
     const ext = path.extname(file.originalname).toLowerCase();
@@ -55,4 +57,4 @@ const upload = multer({
 
 });
 
-module.exports = { upload, s3Uploadv3 };
+module.exports = upload ;

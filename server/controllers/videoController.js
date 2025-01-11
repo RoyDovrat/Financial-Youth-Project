@@ -1,7 +1,5 @@
 const express = require('express');
-const multer = require('multer');
 const path = require('path');
-const uuid = require('uuid').v4 
 const videoService = require('../services/videoService');
 const upload = require('../middleware/upload')
 
@@ -39,11 +37,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-
 router.post('/upload', upload.single('video'), async (req, res) => {
   try {
-    const results = await s3Uploadv3([req.file]); 
-    console.log(results);
     return res.json({ status: "success" });
   } catch (err) {
     console.log(err);

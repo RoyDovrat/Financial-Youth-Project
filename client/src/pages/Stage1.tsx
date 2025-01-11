@@ -95,7 +95,7 @@ function Stage1() {
 
   return (
     <div className='page-stage1'>
-      <div >
+      <div className='start'>
         <h1 className='title'>להשלים את התלוש</h1>
         <p className='instructions'>בחרו מילה מתוך בנק המילים</p>
         <p className='instructions'>והתאימו אותם למיקום הנכון בתלוש השכר</p>
