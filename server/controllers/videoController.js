@@ -1,5 +1,9 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const uuid = require('uuid').v4 
 const videoService = require('../services/videoService');
+const upload = require('../middleware/upload')
 
 const router = express.Router();
 
@@ -33,6 +37,11 @@ router.post('/', async (req, res) => {
   } catch (error) {
     res.status(500).json(error.message);
   }
+});
+
+
+router.post('/upload', upload.single('video'), async (req, res) => {
+  res.json({status: "success"});
 });
 
 router.patch('/:id', async (req, res) => {
