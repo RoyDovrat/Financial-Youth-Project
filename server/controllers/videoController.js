@@ -41,7 +41,14 @@ router.post('/', async (req, res) => {
 
 
 router.post('/upload', upload.single('video'), async (req, res) => {
-  res.json({status: "success"});
+  try {
+    const results = await s3Uploadv3([req.file]); 
+    console.log(results);
+    return res.json({ status: "success" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Video upload failed" });
+  }
 });
 
 router.patch('/:id', async (req, res) => {
