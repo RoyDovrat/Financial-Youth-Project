@@ -52,7 +52,7 @@
     .slot-3 {
         position: absolute;
         top: 106px;
-        right: 254px;
+        right: 256px;
         border-radius: 3px;
         height: 18px;
         width: 100px;
@@ -64,7 +64,7 @@
     .slot-4 {
         position: absolute;
         top: 13px;
-        right: 250px;
+        right: 256px;
         border-radius: 3px;
         height: 18px;
         width: 117px;
@@ -136,6 +136,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        min-width: 500px;
     }
 
   
