@@ -1,6 +1,7 @@
 .page-stage1 {
-
     .start {
+        margin-inline: 110px;
+
 
         .title {
             margin-bottom: 30px;
@@ -15,118 +16,106 @@
         }
     }
 
-    .payslip-container {
-        width: 616px;
-        position: relative;
+    .slot-0 {
+        position: absolute;
+        border-radius: 12px;
+        width: 160px;
+        height: 30px;
+        top: 55px;
+        right: -71px;
+        border: 2px solid blue;
+        background-color: blue;
+    }
 
+    .slot-1 {
+        position: absolute;
+        bottom: 55px;
+        right: -71px;
+        border-radius: 12px;
+        height: 30px;
+        width: 160px;
+        border: 2px solid purple;
+        background-color: purple;
+    }
 
-        .payslip-board {
-            background-color: white;
-            padding: 10px;
-            border-radius: 5px;
-            position: relative;
-            background-color: white;
-            /*width: 100%;*/
-            max-width: 400px;
-            height: auto;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    .slot-2 {
+        position: absolute;
+        top: 161px;
+        right: 340px;
+        border-radius: 12px;
+        height: 30px;
+        width: 160px;
+        border: 2px solid green;
+        background-color: green;
+    }
 
-        }
+    .slot-3 {
+        position: absolute;
+        top: 202px;
+        right: -71px;
+        border-radius: 12px;
+        height: 30px;
+        width: 160px;
+        border: 2px solid darkgoldenrod;
+        background-color: darkgoldenrod;
+    }
 
-        .slot-0 {
-            position: absolute;
-            border-radius: 12px;
-            width: 160px;
-            height: 30px;
-            top: 55px;
-            right: -71px;
-            border: 2px solid blue;
-            background-color: blue;
-        }
+    .slot-4 {
+        position: absolute;
+        bottom: -18px;
+        right: 340px;
+        border-radius: 12px;
+        height: 30px;
+        width: 160px;
+        border: 2px solid lightblue;
+        background-color: lightblue;
 
-        .slot-1 {
-            position: absolute;
-            bottom: 55px;
-            right: -71px;
-            border-radius: 12px;
-            height: 30px;
-            width: 160px;
-            border: 2px solid purple;
-            background-color: purple;
-        }
+    }
 
-        .slot-2 {
-            position: absolute;
-            top: 161px;
-            right: 340px;
-            border-radius: 12px;
-            height: 30px;
-            width: 160px;
-            border: 2px solid green;
-            background-color: green;
-        }
-
-        .slot-3 {
-            position: absolute;
-            top: 202px;
-            right: -71px;
-            border-radius: 12px;
-            height: 30px;
-            width: 160px;
-            border: 2px solid darkgoldenrod;
-            background-color: darkgoldenrod;
-        }
-
-        .slot-4 {
-            position: absolute;
-            bottom: -18px;
-            right: 340px;
-            border-radius: 12px;
-            height: 30px;
-            width: 160px;
-            border: 2px solid lightblue;
-            background-color: lightblue;
-
-        }
-
-        .slot-5 {
-            position: absolute;
-            bottom: 55px;
-            right: 340px;
-            border-radius: 12px;
-            height: 30px;
-            width: 160px;
-            border: 2px solid green;
-            background-color: green;
-        }
-
-
-        .payslip-slot {
-            //border: 2px solid #54177cf2;
-            //background-color: #b3afeb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-        }
-
-
-        .payslip-slot:hover {
-            border: 2px dashed blue;
-        }
+    .slot-5 {
+        position: absolute;
+        bottom: 55px;
+        right: 340px;
+        border-radius: 12px;
+        height: 30px;
+        width: 160px;
+        border: 2px solid green;
+        background-color: green;
     }
 
 
+    .payslip-slot {
+        //border: 2px solid #54177cf2;
+        //background-color: #b3afeb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+    .payslip-slot:hover {
+        border: 2px dashed blue;
+    }
+
+    .words-container {
+        
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        max-width: 398px;
+        flex-direction: row-reverse;
+        justify-content: stretch;
+        gap: 5px;
+        align-content: space-around;
+    }
 
     .Words-bank-container {
+        margin-inline: 150px;
         max-width: 400px;
         position: absolute;
         right: 215px;
         margin-top: 17px;
-        
 
         .bank-title {
             color: #54177cf2;
@@ -134,21 +123,24 @@
 
         }
 
-        .words-container {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-            max-width: 398px;
-            flex-direction: row-reverse;
-            justify-content: stretch;
-            gap: 5px;
-            align-content: space-around;
-        }
-
     }
 
 
+    .payslip-board {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+        background-color: white;
+        /*width: 100%;*/
+        max-width: 400px;
+        height: auto;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
+    }
 
     .employee-details-image {
         position: relative;

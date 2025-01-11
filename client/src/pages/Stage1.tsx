@@ -96,25 +96,27 @@ function Stage1() {
   return (
     <div className='page-stage1'>
       <div className='start'>
-        <h1 className='title'>להשלים את התלוש</h1>
-        <p className='instructions'>בחרו מילה מתוך בנק המילים</p>
-        <p className='instructions'>והתאימו אותם למיקום הנכון בתלוש השכר</p>
+        <div>
+          <h1 className='title'>להשלים את התלוש</h1>
+          <p className='instructions'>בחרו מילה מתוך בנק המילים</p>
+          <p className='instructions'>והתאימו אותם למיקום הנכון בתלוש השכר</p>
+        </div>
+
+        {/* progress bar */}
+        <Box sx={{ width: '100%', margin: '20px 0' }}>
+          <Typography variant="body2" component="div" align="left" gutterBottom sx={{ fontWeight: 'bold', color: '#54177cf2' }}>
+            {STAGE_NUMBER} / {TOTAL_STAGES}
+          </Typography>
+          <LinearProgress variant="determinate" value={PROGRESS}
+            sx={{
+              '& .MuiLinearProgress-bar': {
+                backgroundColor: '#54177cf2',
+              },
+              backgroundColor: '#d3c0e3f2', // background of the track
+            }} />
+        </Box>
       </div>
-
-      {/* progress bar */}
-      <Box sx={{ width: '100%', margin: '20px 0' }}>
-        <Typography variant="body2" component="div" align="left" gutterBottom sx={{ fontWeight: 'bold', color: '#54177cf2' }}>
-          {STAGE_NUMBER} / {TOTAL_STAGES}
-        </Typography>
-        <LinearProgress variant="determinate" value={PROGRESS}
-          sx={{
-            '& .MuiLinearProgress-bar': {
-              backgroundColor: '#54177cf2',
-            },
-            backgroundColor: '#d3c0e3f2', // background of the track
-          }} />
-      </Box>
-
+      
       <div className="payslip-container">
         <div className="payslip-board">
           {/*images of payslip */}
@@ -138,7 +140,7 @@ function Stage1() {
 
         </div>
       </div>
-      
+
       {/*words bank */}
       <div className="Words-bank-container">
         <p className='bank-title'>בנק מילים</p>

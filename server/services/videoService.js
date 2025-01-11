@@ -1,11 +1,34 @@
 const videoRepo = require('../repositories/videoRepository');
+const topicRepo = require('../repositories/topicRepository');
 
-const getAllVideos = (filters) => {
-  return videoRepo.getAllVideos(filters);
+const getAllVideos = async (filters) => {
+  const videos = await videoRepo.getAllVideos(filters);
+  
+  const videosWithTopicsNames = await Promise.all(
+    videos.map(async (video) => {
+      const topicId = video.topic;
+      const topic = await topicRepo.getTopicById(topicId)
+
+      return {
+        ...video.toObject(),
+        topic: topic ? topic.name : null,
+      };
+    })
+  );
+  return videosWithTopicsNames;
 };
 
-const getVideoById = (id) => {
-  return videoRepo.getVideoById(id);
+const getVideoById = async (id) => {
+  const video = await videoRepo.getVideoById(id);
+ 
+  if (!video) return null;
+
+  const topicId = video.topic;
+  const topic = await topicRepo.getTopicById(topicId)
+  return {
+    ...video.toObject(),
+    topic: topic ? topic.name : null,
+  };
 };
 
 const addVideo = (obj) => {

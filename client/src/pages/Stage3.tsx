@@ -94,25 +94,27 @@ function Stage3() {
 
   return (
     <div className='page-stage3'>
-      <div >
-        <h1 className='title'>להשלים את התלוש</h1>
-        <p className='instructions'>בחרו מילה מתוך בנק המילים</p>
-        <p className='instructions'>והתאימו אותם למיקום הנכון בתלוש השכר</p>
-      </div>
+      <div className='start'>
+        <div >
+          <h1 className='title'>להשלים את התלוש</h1>
+          <p className='instructions'>בחרו מילה מתוך בנק המילים</p>
+          <p className='instructions'>והתאימו אותם למיקום הנכון בתלוש השכר</p>
+        </div>
 
-      {/* progress bar */}
-      <Box sx={{ width: '100%', margin: '20px 0' }}>
-        <Typography variant="body2" component="div" align="left" gutterBottom sx={{ fontWeight: 'bold', color: '#54177cf2' }}>
-          {STAGE_NUMBER} / {TOTAL_STAGES}
-        </Typography>
-        <LinearProgress variant="determinate" value={PROGRESS}
-          sx={{
-            '& .MuiLinearProgress-bar': {
-              backgroundColor: '#54177cf2',
-            },
-            backgroundColor: '#d3c0e3f2', // background of the track
-          }} />
-      </Box>
+        {/* progress bar */}
+        <Box sx={{ width: '100%', margin: '20px 0' }}>
+          <Typography variant="body2" component="div" align="left" gutterBottom sx={{ fontWeight: 'bold', color: '#54177cf2' }}>
+            {STAGE_NUMBER} / {TOTAL_STAGES}
+          </Typography>
+          <LinearProgress variant="determinate" value={PROGRESS}
+            sx={{
+              '& .MuiLinearProgress-bar': {
+                backgroundColor: '#54177cf2',
+              },
+              backgroundColor: '#d3c0e3f2', // background of the track
+            }} />
+        </Box>
+      </div>
 
       <div className="payslip-container">
         <div className="payslip-board">
@@ -149,8 +151,8 @@ function Stage3() {
           <p className="dialog-message">הצלחת להשלים את התלוש</p>
           <img src={victory} alt="victory" className="victory-image" />
           <div className="buttons">
-          <button className='nextStage-button' onClick={closeAndNextStage}>חזור להתחלה</button>
-          <button className='currentStage-button' onClick={closeAndCurrentStage}>שחק שוב</button>
+            <button className='nextStage-button' onClick={closeAndNextStage}>חזור להתחלה</button>
+            <button className='currentStage-button' onClick={closeAndCurrentStage}>שחק שוב</button>
           </div>
         </div>
       </dialog>
