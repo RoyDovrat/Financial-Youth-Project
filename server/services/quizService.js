@@ -1,11 +1,36 @@
 const quizRepo = require('../repositories/quizRepository');
+const topicRepo = require('../repositories/topicRepository');
 
-const getAllQuizzes = (filters) => {
-  return quizRepo.getAllQuizzes(filters);
+const getAllQuizzes = async (filters) => {
+  const quizzes = await quizRepo.getAllQuizzes(filters);
+
+  const quizzesWithTopicsNames = await Promise.all(
+    quizzes.map(async (quiz) => {
+      const topicId = quiz.topic;
+      const topic = await topicRepo.getTopicById(topicId)
+
+      return {
+        ...quiz.toObject(),
+        topic: topic ? topic.name : null,
+      };
+    })
+  );
+
+  return quizzesWithTopicsNames;
 };
 
-const getQuizById = (id) => {
-  return quizRepo.getQuizById(id);
+
+const getQuizById = async (id) => {
+  const quiz = await quizRepo.getQuizById(id);
+ 
+  if (!quiz) return null;
+
+  const topicId = quiz.topic;
+  const topic = await topicRepo.getTopicById(topicId)
+  return {
+    ...quiz.toObject(),
+    topic: topic ? topic.name : null,
+  };
 };
 
 const addQuiz = (obj) => {

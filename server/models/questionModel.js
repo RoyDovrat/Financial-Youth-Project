@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const questionSchema = new mongoose.Schema(
     {
         question: { type: String, required: true, unique: true },
-        correctAnswer: { type: String, required: true },
+        options: [
+            { text: { type: String, required: true }, isCorrect: { type: Boolean, required: true } }
+        ],
         topic: { type: mongoose.Schema.Types.ObjectId, ref: 'Topic', required: true }
     },
 
